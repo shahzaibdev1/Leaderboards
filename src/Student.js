@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class Student extends Component {
   constructor(props) {
@@ -9,10 +8,7 @@ class Student extends Component {
   }
 
   componentDidMount() {
-    this.setState({ score: Number(this.props.score) }, () => {
-      // eslint-disable-next-line no-unused-expressions
-      this.state.score >= 350 ? this.setState({ isSuccess: true }) : null;
-    });
+    this.setState({ score: Number(this.props.score) });
   }
 
   addScore = () => {
@@ -60,11 +56,5 @@ class Student extends Component {
     );
   }
 }
-
-Student.propTypes = {
-  studentName: PropTypes.string.isRequired,
-  college: PropTypes.string.isRequired,
-  score: PropTypes.any.isRequired,
-};
 
 export default Student;
